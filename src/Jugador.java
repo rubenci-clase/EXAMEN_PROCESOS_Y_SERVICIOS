@@ -15,9 +15,14 @@ abstract class Jugador implements Runnable {
     public void run() {
         // Se obtiene la acción decidida por el jugador
         accion = decidirAccion();
+        
+        if (id == 1) Partida.setUltimaJugadaJ1(accion);
+        else Partida.setUltimaJugadaJ2(accion);
+        
         // Mostrar la acción tomada por el jugador
         System.out.println("Jugador " + id + " eligió: " + accion);
     }
+    
 }
 
 
